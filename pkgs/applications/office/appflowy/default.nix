@@ -30,7 +30,7 @@ let
 in
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "appflowy";
-  version = "0.6.8";
+  version = "0.7.0";
 
   src = fetchzip {
     url = "https://github.com/AppFlowy-IO/appflowy/releases/download/${finalAttrs.version}/AppFlowy-${finalAttrs.version}-${dist.urlSuffix}";
@@ -96,6 +96,9 @@ stdenvNoCC.mkDerivation (finalAttrs: {
       exec = "appflowy";
       icon = "appflowy";
       categories = [ "Office" ];
+      mimeTypes = [
+        "x-scheme-handler/appflowy-flutter"
+      ];
     })
   ];
 
